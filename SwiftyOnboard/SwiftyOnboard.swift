@@ -190,14 +190,12 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
     }
     
     fileprivate func colorFrom(start color1: UIColor, end color2: UIColor, precent: Float)->UIColor{
-        func cofd(_ color1: CGFloat,_ color2: CGFloat,_ precent: Float)-> Float{
-            let c1 = Float(color1)
-            let c2 = Float(color2)
-            return (c1 + ((c2 - c1) * precent))
+        func cofd(_ color1: CGFloat,_ color2: CGFloat,_ precent: Float)-> CGFloat{
+            return (color1 + ((color2 - color1) * CGFloat(precent)))
         }
-        return UIColor(colorLiteralRed: cofd(color1.cgColor.components![0],
-                                             color2.cgColor.components![0],
-                                             precent),
+        return UIColor(red: cofd(color1.cgColor.components![0],
+                                 color2.cgColor.components![0],
+                                 precent),
                        green: cofd(color1.cgColor.components![1],
                                    color2.cgColor.components![1],
                                    precent),
