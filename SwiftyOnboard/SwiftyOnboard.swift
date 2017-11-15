@@ -160,7 +160,7 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
         }
     }
     
-    internal func tappedPage() {
+    @objc internal func tappedPage() {
         let currentpage = Int(getCurrentPosition())
         self.delegate?.swiftyOnboard(self, tapped: currentpage)
     }
@@ -211,7 +211,7 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
         }
     }
     
-    open func didTapPageControl(_ sender: Any) {
+    @objc open func didTapPageControl(_ sender: Any) {
         let pager = sender as! UIPageControl
         let page = pager.currentPage
         self.goToPage(index: page, animated: true)
